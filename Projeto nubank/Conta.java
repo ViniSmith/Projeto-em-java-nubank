@@ -1,33 +1,61 @@
+import java.math.BigDecimal;
 
 public class Conta
 {
-   private double saldo, creditoEspecial, saldoCreditoEspecial, numeroConta;
+   private double saldo, creditoEspecial, saldoCreditoEspecial;
+   private int numeroConta;
    
-   public void setSaldo() {
+   public void setSaldo(double saldo) {
        this.saldo = saldo;
    }
    public double getSaldo() {
        return this.saldo;
    }
    
-   public void setCreditoEspecial() {
+   public void setCreditoEspecial(double creditoEspecial) {
        this.creditoEspecial = creditoEspecial;
    }
    public double getCreditoEspecial() {
        return this.creditoEspecial;
    }
    
-   public void setSaldoCreditoEspecial() {
+   public void setSaldoCreditoEspecial(double saldoCreditoEspecial) {
        this.saldoCreditoEspecial = saldoCreditoEspecial;
    }
    public double getSaldoCreditoEspecial() {
        return this.saldoCreditoEspecial;
    }
    
-   public void setNumeroConta() {
+   public void setNumeroConta(int numeroConta) {
        this.numeroConta = numeroConta;
    }
-   public double getNumeroConta() {
+   public int getNumeroConta() {
        return this.numeroConta;
    }
+   
+   public Conta() {
+       saldo = creditoEspecial = saldoCreditoEspecial = 0;
+       numeroConta = 0;
+   }
+   public Conta(double saldo, double creditoEspecial, double saldoCreditoEspecial, int numeroConta) {
+       this.saldo = saldo;
+       this.creditoEspecial = creditoEspecial;
+       this.saldoCreditoEspecial = saldoCreditoEspecial;
+       this.numeroConta = numeroConta;
+   }
+   
+   public void deposito(double valor) {
+        saldo = valor;
+        System.out.println("Efetuando depósito de : R$" + valor);
+    }
+    
+    public void saque(double valor) {
+        saldo -= valor;
+        if(saldo < valor) {
+            saldoCreditoEspecial -= valor;
+            if(saldoCreditoEspecial < valor) {
+                System.out.println("Valor insuficiente para sacar!");
+            }
+        }
+    }
 }
