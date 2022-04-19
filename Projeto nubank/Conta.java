@@ -45,11 +45,22 @@ public class Conta
    }
    
    public void deposito(double valor) {
+        double armazenaValor = 0;
         saldo = valor;
         System.out.println("Efetuando depósito de : R$" + valor);
+        if(saldoCreditoEspecial < creditoEspecial) {
+            saldoCreditoEspecial = valor;
+            if(saldoCreditoEspecial > creditoEspecial) {
+                armazenaValor = saldoCreditoEspecial - creditoEspecial;
+                saldoCreditoEspecial -= armazenaValor;
+                saldo = armazenaValor;
+            }
+        }
     }
     
     public void saque(double valor) {
+        
+        double armazenaTotalSaldo = saldo + saldoCreditoEspecial;
         saldo -= valor;
         if(saldo < valor) {
             saldoCreditoEspecial -= valor;
