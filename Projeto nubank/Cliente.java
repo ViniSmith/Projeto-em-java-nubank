@@ -1,33 +1,33 @@
 
-/**
- * Escreva uma descrição da classe Cliente aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
- */
 public class Cliente
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
-
-    /**
-     * Construtor para objetos da classe Cliente
-     */
-    public Cliente()
-    {
-        // inicializa variáveis de instância
-        x = 0;
+    private String nome, sobrenome;
+    private int cpf, dataNascimento;
+    
+    public void setNome(String nome) {
+        this.nome = nome;
     }
-
-    /**
-     * Um exemplo de um método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   um exemplo de um parâmetro de método
-     * @return     a soma de x e y 
-     */
-    public int sampleMethod(int y)
-    {
-        // escreva seu código aqui
-        return x + y;
+    public String getNome() {
+        return this.nome;
+    }
+    
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+    public String getSobrenome() {
+        return this.sobrenome;
+    }
+    
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
+    }
+    public int getCpf() {
+        return this.cpf;
+    }
+    public void setDataNascimento(int dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+    public int getDataNascimento() {
+        return this.dataNascimento;
     }
 }
