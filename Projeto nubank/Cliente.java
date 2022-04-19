@@ -30,4 +30,17 @@ public class Cliente
     public int getDataNascimento() {
         return this.dataNascimento;
     }
+    
+    public Cliente() {
+        nome = "";
+        sobrenome = "";
+        cpf = 0;
+        dataNascimento = 0;
+    }
+    public Cliente(String nome, String sobrenome, int cpf, int dataNascimento) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+    }
 }
