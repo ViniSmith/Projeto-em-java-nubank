@@ -1,8 +1,14 @@
+import java.util.ArrayList;
 
 public class Cliente
 {
     private String nome, sobrenome;
     private int cpf, dataNascimento;
+    ArrayList <Conta> contas;
+    
+    public void addConta(Conta conta) {
+        contas.add(conta);
+    }
     
     public void setNome(String nome) {
         this.nome = nome;

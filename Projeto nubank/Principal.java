@@ -7,9 +7,9 @@ public class Principal
         while(true) {
             int menu = menu();
             if(menu == 1) {
-                
+                cadastrarCliente();
             }else if(menu == 2) {
-                
+                cadastrarConta();
             }else if(menu == 3) {
                 
             }else if(menu == 4) {
@@ -20,18 +20,29 @@ public class Principal
         }
     }
     
-    public static Cliente cadastrarConta() {
+    public static Cliente cadastrarCliente() {
         Cliente cliente = new Cliente();
-        System.out.println("Digite o seu nome");
+        System.out.println("Digite o seu nome : ");
         cliente.setNome(le.next());
-        System.out.println("Digite o seu sobrenome");
+        System.out.println("Digite o seu sobrenome : ");
         cliente.setSobrenome(le.next());
-        System.out.println("Digite o seu CPF");
+        System.out.println("Digite o seu CPF : ");
         cliente.setCpf(le.nextInt());
-        System.out.println("Digite a sua data de nascimento");
+        System.out.println("Digite a sua data de nascimento : ");
         cliente.setDataNascimento(le.nextInt());
         
         return cliente;
+    }
+    
+    public static Conta cadastrarConta() {
+        Conta conta = new Conta();
+        System.out.println("Digite o número da conta : ");
+        conta.setNumeroConta(le.nextInt());
+        System.out.println("Digite o limite total do seu crédito especial : ");
+        conta.setCreditoEspecial(le.nextDouble());
+        conta.setSaldoCreditoEspecial(le.nextDouble());
+        
+        return conta;
     }
     
     public static int menu() {
