@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class Principal
 {
     static Scanner le = new Scanner(System.in);
-    Conta conta = new Conta();
-    Banco banco = new Banco();
+    
     
     public static void main(String[] args) {
+        Conta conta = new Conta();
+        Banco banco = new Banco();
+    
         while(true) {
             int menu = menu();
             if(menu == 1) {
@@ -18,11 +20,17 @@ public class Principal
             }else if(menu == 4) {
                 realizarSaque();
             }else if(menu == 5) {
+                procurarConta(banco);
+            }else if(menu == 6) {
                 break;
             }
         }
     }
     
+    public static void procurarConta(Banco banco) {
+        System.out.println("Digite o número da conta que deseja encontrar : ");
+        banco.procurarConta(le.nextInt());
+    }
     
     public static void realizarDeposito() {
         System.out.println("Digite o valor que deseja depositar : ");
@@ -65,7 +73,8 @@ public class Principal
         System.out.println("( 2 ) Cadastrar uma nova conta");
         System.out.println("( 3 ) Realizar um depósito");
         System.out.println("( 4 ) Realizar um saque");
-        System.out.println("( 5 ) Sair");
+        System.out.println("( 5 ) Procurar uma conta");
+        System.out.println("( 6 ) Sair");
         return le.nextInt();
     }
 }
