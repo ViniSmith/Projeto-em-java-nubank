@@ -1,33 +1,30 @@
+import java.util.Scanner;
 
-/**
- * Escreva uma descrição da classe Principal aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
- */
 public class Principal
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int x;
-
-    /**
-     * Construtor para objetos da classe Principal
-     */
-    public Principal()
-    {
-        // inicializa variáveis de instância
-        x = 0;
+    static Scanner le = new Scanner(System.in);
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente();
+        while(true) {
+            int menu = menu();
+            if(menu == 1) {
+                
+            }else if(menu == 2) {
+                
+            }else if(menu == 3) {
+                
+            }else if(menu == 4) {
+                break;
+            }
+        }
     }
-
-    /**
-     * Um exemplo de um método - substitua este comentário pelo seu próprio
-     * 
-     * @param  y   um exemplo de um parâmetro de método
-     * @return     a soma de x e y 
-     */
-    public int sampleMethod(int y)
-    {
-        // escreva seu código aqui
-        return x + y;
+    
+    public static int menu() {
+        System.out.println("Bem vindo ao Nubank, escola uma opção : ");
+        System.out.println("( 1 ) Cadastrar uma nova conta");
+        System.out.println("( 2 ) Realizar um depósito");
+        System.out.println("( 3 ) Realizar um saque");
+        System.out.println("( 4 ) Sair");
+        return le.nextInt();
     }
 }
