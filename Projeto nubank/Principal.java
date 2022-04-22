@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Principal
 {
     static Scanner le = new Scanner(System.in);
+    Conta conta = new Conta();
+    Banco banco = new Banco();
+    
     public static void main(String[] args) {
         while(true) {
             int menu = menu();
@@ -11,13 +14,24 @@ public class Principal
             }else if(menu == 2) {
                 cadastrarConta();
             }else if(menu == 3) {
-                
+                realizarDeposito();
             }else if(menu == 4) {
-                
+                realizarSaque();
             }else if(menu == 5) {
                 break;
             }
         }
+    }
+    
+    
+    public static void realizarDeposito() {
+        System.out.println("Digite o valor que deseja depositar : ");
+        
+    }
+    
+    public static void realizarSaque() {
+        System.out.println("Digite o valor que deseja sacar");
+        
     }
     
     public static Cliente cadastrarCliente() {
